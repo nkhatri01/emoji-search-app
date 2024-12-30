@@ -41,17 +41,7 @@ function Main() {
         {/* Show the result heading only if keyword is present */}
         {/* {keyword && <h3>Result for - {keyword}</h3>} */}
       </div>
-
-      {/* Search Button */}
-      <div className="col-2 float-end">
-        <button
-          type="search"
-          className="bg-success form-control text-white border-outline-success"
-        >
-          Search
-        </button>
-      </div>
-
+  
       <hr />
 
       {/* Emoji Display */}
