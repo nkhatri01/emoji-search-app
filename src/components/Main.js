@@ -19,9 +19,19 @@ function Main() {
       if (singleEmoji.description.toLowerCase().includes(keyword)) {
         return true; // Match if the description contains the keyword
       }
-      if (singleEmoji.emoji.toLowerCase().includes(keyword)) {
+       if (singleEmoji.emoji.toLowerCase().includes(keyword)) {
         return true; // Match if the emoji itself contains the keyword
       }
+      // Check if any alias matches the keyword
+    if (singleEmoji.aliases.some((alias) => alias.toLowerCase().includes(keyword))) {
+      return true;
+    }
+
+    // Check if any tag matches the keyword
+    if (singleEmoji.tags.some((tag) => tag.toLowerCase().includes(keyword))) {
+      return true;
+    }
+
       return false; // No match
     });
 
@@ -31,7 +41,7 @@ function Main() {
   return (
     <div className="row">
       {/* Input Field */}
-      <div className="col-10 float-start">
+      <div className="col-12">
         <input
           type="text"
           onChange={typed} // Using 'onChange' for live search
@@ -42,16 +52,7 @@ function Main() {
         {/* {keyword && <h3>Result for - {keyword}</h3>} */}
       </div>
 
-      {/* Search Button */}
-      <div className="col-2 float-end">
-        <button
-          type="search"
-          className="bg-success form-control text-white border-outline-success"
-        >
-          Search
-        </button>
-      </div>
-
+     
       <hr />
 
       {/* Emoji Display */}
