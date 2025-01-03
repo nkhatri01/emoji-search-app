@@ -41,7 +41,7 @@ function Main() {
   return (
     <div className="row">
       {/* Input Field */}
-      <div className="col-12">
+      <div className="w-100">
         <input
           type="text"
           onChange={typed} // Using 'onChange' for live search
@@ -52,7 +52,6 @@ function Main() {
         {/* {keyword && <h3>Result for - {keyword}</h3>} */}
       </div>
 
-     
       <hr />
 
       {/* Emoji Display */}
